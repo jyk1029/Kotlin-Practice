@@ -1,37 +1,39 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.7.7"
-    id("io.spring.dependency-management") version "1.1.0"
-    kotlin("jvm") version "1.7.22"
-    kotlin("plugin.spring") version "1.7.22"
+    id("org.springframework.boot") version PluginVersion.SPRING_BOOT_FRAMEWORK_VERSION
+    id("io.spring.dependency-management") version PluginVersion.SPRING_DEPENDENCY_MANAGEMENT_VERSION
+    kotlin("jvm") version PluginVersion.JVM_VERSION
+    kotlin("plugin.spring") version PluginVersion.PLUGIN_SPRING_VERSION
+    application
 }
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
+application {
+    mainClass.set("ApplicationKt")
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-security")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("io.jsonwebtoken:jjwt:0.9.0")
-    runtimeOnly("mysql:mysql-connector-java")
-    implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
-    implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
-    implementation("io.jsonwebtoken:jjwt:0.9.1")
-    implementation("org.springframework.security.oauth:spring-security-oauth2")
-    implementation("org.springframework.security.oauth.boot", "spring-security-oauth2-autoconfigure", "2.6.8")
-    implementation("org.springframework.security", "spring-security-oauth2-client", "5.7.3")
+    implementation(Dependency.JPA)
+    implementation(Dependency.SECURITY)
+    implementation(Dependency.VALIDATION)
+    implementation(Dependency.WEB)
+    implementation(Dependency.JACKSON)
+    implementation(Dependency.REFLECT)
+    implementation(Dependency.JDK8)
+    implementation(Dependency.JWT)
+    runtimeOnly(Dependency.MYSQL)
+    implementation(Dependency.REDIS)
+    implementation(Dependency.OAUTH2)
+    implementation("org.springframework.security.oauth.boot", Dependency.OAUTH2_AUTOCONFIGURE, DependencyVersion.OAUTH2_AUTOCONFIGURE)
+    implementation("org.springframework.security", Dependency.OAUTH2_CLIENT, DependencyVersion.OAUTH2_CLIENT)
 }
 
 tasks.withType<KotlinCompile> {
