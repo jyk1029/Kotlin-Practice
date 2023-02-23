@@ -27,7 +27,11 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java")
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation ("org.springdoc:springdoc-openapi-ui:1.6.9")
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
+    implementation("io.jsonwebtoken:jjwt:0.9.1")
+    implementation("org.springframework.security.oauth:spring-security-oauth2")
+    implementation("org.springframework.security.oauth.boot", "spring-security-oauth2-autoconfigure", "2.6.8")
+    implementation("org.springframework.security", "spring-security-oauth2-client", "5.7.3")
 }
 
 tasks.withType<KotlinCompile> {
