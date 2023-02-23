@@ -1,0 +1,15 @@
+object Dependency {
+    const val JPA = "org.springframework.boot:spring-boot-starter-data-jpa"
+    const val SECURITY = "org.springframework.boot:spring-boot-starter-security"
+    const val VALIDATION = "org.springframework.boot:spring-boot-starter-validation"
+    const val WEB = "org.springframework.boot:spring-boot-starter-web"
+    const val JACKSON = "com.fasterxml.jackson.module:jackson-module-kotlin"
+    const val REFLECT = "org.jetbrains.kotlin:kotlin-reflect"
+    const val JDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    const val JWT = "io.jsonwebtoken:jjwt:${DependencyVersion.JWT}"
+    const val MYSQL = "mysql:mysql-connector-java"
+    const val REDIS = "org.springframework.boot:spring-boot-starter-data-redis"
+    const val OAUTH2 = "org.springframework.security.oauth:spring-security-oauth2"
+    const val OAUTH2_AUTOCONFIGURE = "spring-security-oauth2-autoconfigure"
+    const val OAUTH2_CLIENT = "spring-security-oauth2-client"
+}
