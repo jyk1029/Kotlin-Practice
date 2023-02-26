@@ -5,16 +5,12 @@ plugins {
     id("io.spring.dependency-management") version PluginVersion.SPRING_DEPENDENCY_MANAGEMENT_VERSION
     kotlin("jvm") version PluginVersion.JVM_VERSION
     kotlin("plugin.spring") version PluginVersion.PLUGIN_SPRING_VERSION
-    application
+    kotlin("plugin.jpa") version PluginVersion.PLUGIN_JPA_VERSION
 }
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
-
-application {
-    mainClass.set("ApplicationKt")
-}
 
 repositories {
     mavenCentral()
@@ -49,6 +45,12 @@ tasks.withType<Test> {
 }
 
 allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("javax.persistence.Embeddable")
+}
+
+noArg {
     annotation("javax.persistence.Entity")
     annotation("javax.persistence.MappedSuperclass")
     annotation("javax.persistence.Embeddable")
