@@ -19,12 +19,12 @@ class UserSignUpService(
     @Transactional
     fun execute(request: UserSignUpRequest) {
 
-        if(userRepository.existsByEmail(request.email)) {
+        if (userRepository.existsByEmail(request.email)) {
             throw EmailAlreadyExistsException.EXCEPTION
         }
 
         val user = User(
-            id = UUID(0,0),
+            id = UUID(0, 0),
             email = request.email,
             password = passwordEncoder.encode(request.password),
             name = request.name,
