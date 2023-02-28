@@ -5,6 +5,7 @@ import com.example.oauth.domain.user.domain.repository.UserRepository
 import com.example.oauth.domain.user.domain.type.ProviderType.LOCAL
 import com.example.oauth.domain.user.domain.type.Role
 import com.example.oauth.domain.user.exception.EmailAlreadyExistsException
+import com.example.oauth.domain.user.facade.UserFacade
 import com.example.oauth.domain.user.presentation.dto.request.UserSignUpRequest
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -14,12 +15,13 @@ import java.util.*
 @Service
 class UserSignUpService(
     private val userRepository: UserRepository,
+    private val userFacade: UserFacade,
     private val passwordEncoder: PasswordEncoder
 ) {
     @Transactional
     fun execute(request: UserSignUpRequest) {
 
-        if (userRepository.existsByEmail(request.email)) {
+        if (userFacade.checkUserExist(request.email)) {
             throw EmailAlreadyExistsException.EXCEPTION
         }
 
