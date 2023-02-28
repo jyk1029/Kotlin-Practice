@@ -1,6 +1,8 @@
 package com.example.oauth.global.security
 
 import com.example.oauth.global.config.FilterConfig
+import com.example.oauth.global.security.jwt.JwtTokenProvider
+import com.example.oauth.global.security.jwt.JwtTokenResolver
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -14,7 +16,9 @@ import org.springframework.security.web.SecurityFilterChain
 @EnableWebSecurity
 @Configuration
 class SecurityConfig(
-    private val objectMapper: ObjectMapper
+    private val objectMapper: ObjectMapper,
+    private val jwtTokenProvider: JwtTokenProvider,
+    private val jwtTokenResolver: JwtTokenResolver
 ) {
     @Bean
     @Throws(Exception::class)
@@ -33,7 +37,7 @@ class SecurityConfig(
             .antMatchers("/**").permitAll()
             .anyRequest().permitAll()
 
-            .and().apply(FilterConfig(objectMapper))
+            .and().apply(FilterConfig(objectMapper, jwtTokenProvider, jwtTokenResolver))
             .and().build()
     }
 
