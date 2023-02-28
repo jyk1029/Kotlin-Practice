@@ -29,6 +29,7 @@ dependencies {
     implementation(Dependency.REDIS)
     implementation(Dependency.OAUTH2)
     implementation(Dependency.QUERYDSL)
+    implementation(Dependency.OPENFEIGN)
     implementation("org.springframework.security.oauth.boot", Dependency.OAUTH2_AUTOCONFIGURE, DependencyVersion.OAUTH2_AUTOCONFIGURE)
     implementation("org.springframework.security", Dependency.OAUTH2_CLIENT, DependencyVersion.OAUTH2_CLIENT)
     annotationProcessor(Dependency.CONFIGURATION_PROCESSOR)
