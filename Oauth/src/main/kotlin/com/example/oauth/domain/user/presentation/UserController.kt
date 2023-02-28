@@ -24,7 +24,7 @@ class UserController(
     fun signUp(@RequestBody @Valid request: UserSignUpRequest) {
         userSignUpService.execute(request)
     }
-    
+
     @PostMapping("/signin")
     fun signIn(@RequestBody @Valid request: UserSignInRequest): TokenResponse {
         return userSignInService.execute(request)
