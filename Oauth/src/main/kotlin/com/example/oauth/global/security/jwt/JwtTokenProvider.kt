@@ -33,8 +33,12 @@ class JwtTokenProvider(
 
     fun getToken(email: String): TokenResponse {
         val accessToken: String = generateToken(email, jwtProperties.accessExp, ACCESS_KEY)
+        val refreshToken: String = generateToken(email, jwtProperties.refreshExp, REFRESH_KEY)
 
-        return TokenResponse(accessToken = accessToken)
+        return TokenResponse(
+            accessToken = accessToken,
+            refreshToken = refreshToken
+        )
     }
 
     fun generateRefreshToken(email: String): String {
