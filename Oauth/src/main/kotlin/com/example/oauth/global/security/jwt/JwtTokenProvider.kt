@@ -41,7 +41,9 @@ class JwtTokenProvider(
         val newRefreshToken: String = generateToken(email, jwtProperties.refreshExp, REFRESH_KEY)
         refreshTokenRepository.save(
             RefreshToken(
-                email = (email), token = newRefreshToken, ttl = jwtProperties.refreshExp
+                email = (email),
+                token = newRefreshToken,
+                ttl = jwtProperties.refreshExp
             )
         )
         return newRefreshToken
