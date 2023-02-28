@@ -1,7 +1,7 @@
 package com.example.oauth.global.entity
 
 import org.hibernate.annotations.GenericGenerator
-import java.util.UUID
+import java.util.*
 import javax.persistence.Column
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
