@@ -14,4 +14,5 @@ object Dependency {
     const val OAUTH2_CLIENT = "spring-security-oauth2-client"
     const val QUERYDSL = "com.querydsl:querydsl-jpa:${DependencyVersion.QUERYDSL}"
     const val QUERYDSL_PROCESSOR = "com.querydsl:querydsl-apt:${DependencyVersion.QUERYDSL}:jpa"
+    const val CONFIGURATION_PROCESSOR = "org.springframework.boot:spring-boot-configuration-processor"
 }
