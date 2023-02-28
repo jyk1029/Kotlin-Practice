@@ -12,6 +12,7 @@ enum class ErrorCode(
     PASSWORD_MISMATCH(401, "Password Mismatch"),
 
     USER_NOT_FOUND(404, "User Not Found"),
+    REFRESH_TOKEN_NOT_FOUND(401, "Refresh Token Not Found"),
 
     EMAIL_ALREADY_EXISTS(409, "Email Already Exists"),
 

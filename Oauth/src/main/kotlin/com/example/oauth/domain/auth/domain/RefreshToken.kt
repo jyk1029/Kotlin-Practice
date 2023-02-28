@@ -13,8 +13,13 @@ class RefreshToken(
 
     @Indexed
     @field:NotBlank
-    val token: String,
+    var token: String,
 
     @TimeToLive
     var ttl: Long
-)
+) {
+    fun updateToken(token: String, ttl: Long) {
+        this.token = token
+        this.ttl = ttl
+    }
+}
