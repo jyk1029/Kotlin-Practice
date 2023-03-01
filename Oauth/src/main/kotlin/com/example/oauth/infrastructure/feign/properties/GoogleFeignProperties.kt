@@ -7,6 +7,5 @@ import org.springframework.boot.context.properties.ConstructorBinding
 @ConstructorBinding
 data class GoogleFeignProperties(
     val clientId: String,
-    val clientSecret: String,
-    val scope: String
+    val clientSecret: String
 )
