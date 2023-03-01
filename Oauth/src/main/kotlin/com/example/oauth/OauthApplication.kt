@@ -8,7 +8,7 @@ import org.springframework.boot.runApplication
 import org.springframework.cloud.openfeign.EnableFeignClients
 
 @SpringBootApplication
-@EnableConfigurationProperties(JwtProperties::class)
+@EnableConfigurationProperties(JwtProperties::class, GoogleFeignProperties::class)
 @EnableFeignClients
 class OauthApplication
 
