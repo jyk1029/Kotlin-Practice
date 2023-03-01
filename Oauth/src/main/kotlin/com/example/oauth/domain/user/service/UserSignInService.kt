@@ -19,12 +19,12 @@ class UserSignInService(
     @Transactional
     fun execute(request: UserSignInRequest): TokenResponse {
         val user: User = userFacade.getByEmail(request.email)
-        val acessToken = jwtTokenProvider.getToken(request.email)
+        val accessToken = jwtTokenProvider.getToken(request.email)
 
         if (!passwordEncoder.matches(request.password, user.password)) {
             throw PasswordMisMatchException.EXCEPTION
         }
 
-        return acessToken
+        return accessToken
     }
 }
