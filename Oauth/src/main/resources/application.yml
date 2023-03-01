@@ -20,6 +20,10 @@ spring:
 
   jackson:
     property-naming-strategy: SNAKE_CASE
+
+  main:
+    allow-bean-definition-overriding: true
+
 auth:
   google:
     clientId: ${GOOGLE_CLIENT_ID}
