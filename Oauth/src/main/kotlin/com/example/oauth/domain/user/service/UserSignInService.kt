@@ -21,7 +21,7 @@ class UserSignInService(
         val user: User = userFacade.getByEmail(request.email)
         val acessToken = jwtTokenProvider.getToken(request.email)
 
-        if (!passwordEncoder.matches(request.password, user.email)) {
+        if (!passwordEncoder.matches(request.password, user.password)) {
             throw PasswordMisMatchException.EXCEPTION
         }
 
