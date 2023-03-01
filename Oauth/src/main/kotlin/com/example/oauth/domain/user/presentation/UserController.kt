@@ -1,6 +1,6 @@
 package com.example.oauth.domain.user.presentation
 
-import com.example.oauth.domain.auth.presentation.dto.response.TokenResponse
+import com.example.oauth.infrastructure.feign.dto.response.TokenResponse
 import com.example.oauth.domain.user.presentation.dto.request.UserSignInRequest
 import com.example.oauth.domain.user.presentation.dto.request.UserSignUpRequest
 import com.example.oauth.domain.user.service.UserSignInService

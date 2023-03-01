@@ -1,6 +1,6 @@
 package com.example.oauth.domain.auth.presentation
 
-import com.example.oauth.domain.auth.presentation.dto.response.TokenResponse
+import com.example.oauth.infrastructure.feign.dto.response.TokenResponse
 import com.example.oauth.domain.auth.service.ReissueService
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.RequestHeader

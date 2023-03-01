@@ -3,7 +3,7 @@ package com.example.oauth.domain.auth.service
 import com.example.oauth.domain.auth.domain.RefreshToken
 import com.example.oauth.domain.auth.domain.repository.RefreshTokenRepository
 import com.example.oauth.domain.auth.exception.RefreshTokenNotFoundException
-import com.example.oauth.domain.auth.presentation.dto.response.TokenResponse
+import com.example.oauth.infrastructure.feign.dto.response.TokenResponse
 import com.example.oauth.global.security.jwt.JwtProperties
 import com.example.oauth.global.security.jwt.JwtTokenProvider
 import org.springframework.stereotype.Service

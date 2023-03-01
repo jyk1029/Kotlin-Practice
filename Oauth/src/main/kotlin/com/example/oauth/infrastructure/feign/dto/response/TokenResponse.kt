@@ -1,4 +1,4 @@
-package com.example.oauth.domain.auth.presentation.dto.response
+package com.example.oauth.infrastructure.feign.dto.response
 
 data class TokenResponse(
     val accessToken: String,

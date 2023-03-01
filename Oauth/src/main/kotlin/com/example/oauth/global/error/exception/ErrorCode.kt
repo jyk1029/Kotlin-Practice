@@ -21,7 +21,6 @@ enum class ErrorCode(
 
     EMAIL_ALREADY_EXISTS(409, "Email Already Exists"),
 
-
     FEIGN_EXPIRED_TOKEN(419, "Feign Expired Token"),
 
     UNEXPECTED_TOKEN(500, "Unexpected Token Exception"),

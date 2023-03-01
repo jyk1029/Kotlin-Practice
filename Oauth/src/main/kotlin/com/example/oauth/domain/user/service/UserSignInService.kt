@@ -1,6 +1,6 @@
 package com.example.oauth.domain.user.service
 
-import com.example.oauth.domain.auth.presentation.dto.response.TokenResponse
+import com.example.oauth.infrastructure.feign.dto.response.TokenResponse
 import com.example.oauth.domain.user.domain.User
 import com.example.oauth.domain.user.exception.PasswordMisMatchException
 import com.example.oauth.domain.user.facade.UserFacade
