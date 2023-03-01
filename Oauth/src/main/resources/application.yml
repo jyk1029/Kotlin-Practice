@@ -20,38 +20,27 @@ spring:
 
   jackson:
     property-naming-strategy: SNAKE_CASE
+auth:
+  google:
+    clientId: ${GOOGLE_CLIENT_ID}
+    clientSecret: ${GOOGLE_CLIENT_SECRET}
+    
+  kakao:
+    clientId: ${KAKAO_CLIENT_ID}
+    clientSecret: ${KAKAO_CLIENT_SECRET}
+    clientAuthenticationMethod: get
+    authorizationGrantType: authorization_code
+    redirectUri: ${KAKAO_REDIRECT_URL}
+    clientName: Kakao
 
-  security:
-    oauth2.client:
-      registration:
-        google:
-          clientId: ${GOOGLE_CLIENT_ID}
-          clientSecret: ${GOOGLE_CLIENT_SECRET}
-          scope:
-            - email
-            - profile
-        kakao:
-          clientId: ${KAKAO_CLIENT_ID}
-          clientSecret: ${KAKAO_CLIENT_SECRET}
-          clientAuthenticationMethod: get
-          authorizationGrantType: authorization_code
-          redirectUri: ${KAKAO_REDIRECT_URL}
-          scope:
-            - profile_nickname
-            - profile_image
-            - account_email
-          clientName: Kakao
-        facebook:
-          clientId: ${FACEBOOK_CLIENT_ID}
-          clientSecret: ${FACEBOOK_CLIENT_ID}
-          scope:
-            - email
-            - public_profile
+  facebook:
+    clientId: ${FACEBOOK_CLIENT_ID}
+    clientSecret: ${FACEBOOK_CLIENT_ID}
 
-      provider:
-        kakao:
-          authorization_uri: https://kauth.kakao.com/oauth/authorize
-          token_uri: https://kauth.kakao.com/oauth/token
+  provider:
+    kakao:
+      authorization_uri: https://kauth.kakao.com/oauth/authorize
+      token_uri: https://kauth.kakao.com/oauth/token
 
 jwt:
   secret_key: ${JWT_SECRET_KEY}
