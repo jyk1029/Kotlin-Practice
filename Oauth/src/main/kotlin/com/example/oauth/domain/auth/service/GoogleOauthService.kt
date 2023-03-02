@@ -36,7 +36,7 @@ class GoogleOauthService(
             clientSecret = googleFeignProperties.clientSecret
         ).accessToken
 
-        val userInfo: GoogleUserInfoElement = googleUserInfoClient.getUserInfo(googleToken).response
+        val userInfo: GoogleUserInfoElement = googleUserInfoClient.getUserInfo(googleToken).googleResponse
 
         var user: User? = userFacade.getByEmail(userInfo.email)
 
