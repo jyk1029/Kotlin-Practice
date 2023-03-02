@@ -11,6 +11,6 @@ interface GoogleTokenClient {
     fun getCode(
         @RequestParam("grant_type") grantType: String,
         @RequestParam("client_id") clientId: String,
-        @RequestParam("client_secret") clientSecret: String
+        @RequestParam("client_secret") clientSecret: String,
     ): TokenResponse
 }
