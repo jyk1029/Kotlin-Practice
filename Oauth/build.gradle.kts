@@ -31,6 +31,7 @@ dependencies {
     implementation(Dependency.QUERYDSL)
     implementation(Dependency.OPENFEIGN)
     implementation(Dependency.SWAGGER)
+    implementation(Dependency.SWAGEER_STARTER)
     implementation("org.springframework.security.oauth.boot", Dependency.OAUTH2_AUTOCONFIGURE, DependencyVersion.OAUTH2_AUTOCONFIGURE)
     implementation("org.springframework.security", Dependency.OAUTH2_CLIENT, DependencyVersion.OAUTH2_CLIENT)
     annotationProcessor(Dependency.CONFIGURATION_PROCESSOR)

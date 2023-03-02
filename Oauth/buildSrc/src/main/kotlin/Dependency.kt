@@ -17,4 +17,5 @@ object Dependency {
     const val CONFIGURATION_PROCESSOR = "org.springframework.boot:spring-boot-configuration-processor"
     const val OPENFEIGN = "org.springframework.cloud:spring-cloud-starter-openfeign:${DependencyVersion.OPENFEIGN}"
     const val SWAGGER = "io.springfox:springfox-swagger-ui:${DependencyVersion.SWAGGER}"
+    const val SWAGEER_STARTER = "io.springfox:springfox-boot-starter:3.0.0"
 }
