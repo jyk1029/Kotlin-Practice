@@ -4,7 +4,6 @@ import com.example.oauth.domain.user.domain.User
 import com.example.oauth.domain.user.domain.repository.UserRepository
 import com.example.oauth.domain.user.domain.type.ProviderType.GOOGLE
 import com.example.oauth.domain.user.domain.type.Role.USER
-import com.example.oauth.domain.user.facade.UserFacade
 import com.example.oauth.global.security.jwt.JwtTokenProvider
 import com.example.oauth.infrastructure.feign.client.GoogleTokenClient
 import com.example.oauth.infrastructure.feign.client.GoogleUserInfoClient
@@ -22,8 +21,7 @@ class GoogleOauthService(
     private val googleFeignProperties: GoogleFeignProperties,
     private val userRepository: UserRepository,
     private val jwtTokenProvider: JwtTokenProvider,
-    private val passwordEncoder: PasswordEncoder,
-    private val userFacade: UserFacade
+    private val passwordEncoder: PasswordEncoder
 ) {
     companion object {
         const val GRANT_TYPE = "authorization_code"
@@ -38,7 +36,7 @@ class GoogleOauthService(
 
         val userInfo: GoogleUserInfoElement = googleUserInfoClient.getUserInfo(googleToken).googleResponse
 
-        var user: User? = userFacade.getByEmail(userInfo.email)
+        var user: User? = userRepository.findByEmail(userInfo.email)
 
         if (user == null) {
             user = User(
